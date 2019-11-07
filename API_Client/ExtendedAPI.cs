@@ -72,7 +72,8 @@ namespace SDKPaylineDotNet.ExtendedAPI {
                     out string contractNumber, 
                     [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://obj.ws.payline.experian.com", IsNullable=false)] out paymentAdditional[] paymentAdditionalList, 
                     [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] out bankAccountData bankAccountData, 
-                    [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] out subMerchant subMerchant) {
+                    [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] out subMerchant subMerchant, 
+                    [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] out authentication3DSecure authentication3DSecure) {
             object[] results = this.Invoke("getTransactionDetails", new object[] {
                         version,
                         transactionId,
@@ -96,6 +97,7 @@ namespace SDKPaylineDotNet.ExtendedAPI {
             paymentAdditionalList = ((paymentAdditional[])(results[13]));
             bankAccountData = ((bankAccountData)(results[14]));
             subMerchant = ((subMerchant)(results[15]));
+            authentication3DSecure = ((authentication3DSecure)(results[16]));
             return ((result)(results[0]));
         }
         
@@ -128,7 +130,8 @@ namespace SDKPaylineDotNet.ExtendedAPI {
                     out string contractNumber, 
                     out paymentAdditional[] paymentAdditionalList, 
                     out bankAccountData bankAccountData, 
-                    out subMerchant subMerchant) {
+                    out subMerchant subMerchant, 
+                    out authentication3DSecure authentication3DSecure) {
             object[] results = this.EndInvoke(asyncResult);
             transaction = ((transaction)(results[1]));
             payment = ((payment)(results[2]));
@@ -145,6 +148,7 @@ namespace SDKPaylineDotNet.ExtendedAPI {
             paymentAdditionalList = ((paymentAdditional[])(results[13]));
             bankAccountData = ((bankAccountData)(results[14]));
             subMerchant = ((subMerchant)(results[15]));
+            authentication3DSecure = ((authentication3DSecure)(results[16]));
             return ((result)(results[0]));
         }
         
@@ -3471,6 +3475,14 @@ namespace SDKPaylineDotNet.ExtendedAPI {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((subMerchant)(this.results[15]));
+            }
+        }
+        
+        /// <remarks/>
+        public authentication3DSecure authentication3DSecure {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((authentication3DSecure)(this.results[16]));
             }
         }
     }

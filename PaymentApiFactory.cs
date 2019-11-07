@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 
@@ -122,9 +123,9 @@ namespace SDKPaylineDotNet
 
         private static PaylineProperties LoadConfiguration()
         {
-            Debug.WriteLine("Payline SDK - trying to load configuration file from " + Path.Combine(System.Web.HttpContext.Current.Request.PhysicalApplicationPath, "payline.properties.xml"));
+            Debug.WriteLine("Payline SDK - trying to load configuration file from " + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "payline.properties.xml"));
             //Get properties from payline.properties.xml
-            return ((PaylineProperties)SerialXML.Load(System.Web.HttpContext.Current.Request.PhysicalApplicationPath, "payline.properties.xml", typeof(PaylineProperties)));
+            return ((PaylineProperties)SerialXML.Load(AppDomain.CurrentDomain.BaseDirectory, "payline.properties.xml", typeof(PaylineProperties)));
         }
     }
 }

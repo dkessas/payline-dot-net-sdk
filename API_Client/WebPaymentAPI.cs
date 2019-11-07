@@ -82,7 +82,7 @@ namespace SDKPaylineDotNet.WebPaymentAPI {
                     [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://obj.ws.payline.experian.com", IsNullable=false)] privateData[] privateDataList, 
                     [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string languageCode, 
                     [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string customPaymentPageCode, 
-                    [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] buyer buyer, 
+                    buyer buyer, 
                     [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] owner owner, 
                     [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string securityMode, 
                     [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] recurring recurring, 
@@ -3112,6 +3112,8 @@ namespace SDKPaylineDotNet.WebPaymentAPI {
         
         private string threeDSMethodResultField;
         
+        private string challengeWindowSizeField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string challengeInd {
@@ -3197,6 +3199,17 @@ namespace SDKPaylineDotNet.WebPaymentAPI {
             }
             set {
                 this.threeDSMethodResultField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string challengeWindowSize {
+            get {
+                return this.challengeWindowSizeField;
+            }
+            set {
+                this.challengeWindowSizeField = value;
             }
         }
     }
@@ -3390,6 +3403,8 @@ namespace SDKPaylineDotNet.WebPaymentAPI {
         
         private string amountModificationDateField;
         
+        private string billingRankField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string firstAmount {
@@ -3483,6 +3498,17 @@ namespace SDKPaylineDotNet.WebPaymentAPI {
             }
             set {
                 this.amountModificationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string billingRank {
+            get {
+                return this.billingRankField;
+            }
+            set {
+                this.billingRankField = value;
             }
         }
     }

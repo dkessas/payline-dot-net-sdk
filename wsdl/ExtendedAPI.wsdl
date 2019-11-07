@@ -24,7 +24,7 @@
 						<element name="privateDataList" nillable="true" type="tns1:privateDataList"/>
 						<element name="languageCode" nillable="true" type="xsd:string"/>
 						<element name="customPaymentPageCode" nillable="true" type="xsd:string"/>
-						<element minOccurs="0" name="buyer" nillable="true" type="tns1:buyer"/>
+						<element minOccurs="0" name="buyer" type="tns1:buyer"/>
 						<element name="owner" nillable="true" type="tns1:owner"/>
 						<element name="securityMode" nillable="true" type="xsd:string"/>
 						<element name="recurring" nillable="true" type="tns1:recurring"/>
@@ -130,6 +130,7 @@
 						<element name="subMerchant" nillable="true" type="tns1:subMerchant"/>
 						<element name="asynchronousRetryTimeout" nillable="true" type="xsd:string"/>
 						<element name="linkedTransactionId" nillable="true" type="xsd:string"/>
+						<element name="recurring" nillable="true" type="tns1:recurring"/>
 					</sequence>
 				</complexType>
 			</element>
@@ -964,6 +965,7 @@
 						<element minOccurs="0" name="paymentAdditionalList" nillable="true" type="tns1:paymentAdditionalList"/>
 						<element name="bankAccountData" nillable="true" type="tns1:bankAccountData"/>
 						<element name="subMerchant" nillable="true" type="tns1:subMerchant"/>
+						<element minOccurs="0" name="authentication3DSecure" nillable="true" type="tns1:authentication3DSecure"/>
 					</sequence>
 				</complexType>
 			</element>
@@ -1040,6 +1042,7 @@
                         <element name="recurring" nillable="true" type="tns1:recurring"/>
                         <element name="threeDSInfo" nillable="true" type="tns1:threeDSInfo"/>
                         <element name="merchantScore" nillable="true" type="xsd:string"/>
+						<element name="privateDataList" nillable="true" type="tns1:privateDataList"/>
 					</sequence>
 				</complexType>
 			</element>
@@ -1066,6 +1069,7 @@
 						<element name="authentication3DSecure" nillable="true" type="tns1:authentication3DSecure"/>
 						<element minOccurs="0" name="virtualCvx" nillable="true" type="xsd:string"/>
 						<element minOccurs="0" name="token" nillable="true" type="xsd:string"/>
+						<element name="privateDataList" nillable="true" type="tns1:privateDataList"/>
 					</sequence>
 				</complexType>
 			</element>
@@ -1083,7 +1087,8 @@
 						<element name="contractNumber" nillable="false" type="xsd:string"/>
 						<element name="pares" nillable="false" type="xsd:string"/>
 						<element name="md" nillable="true" type="xsd:string"/>
-						<element name="card" nillable="false" type="tns1:card"/>
+						<element name="card" nillable="true" type="tns1:card"/>
+						<element name="privateDataList" nillable="true" type="tns1:privateDataList"/>
 					</sequence>
 				</complexType>
 			</element>
@@ -1100,6 +1105,7 @@
 						<element name="result" nillable="false" type="tns1:result"/>
 						<element name="authentication3DSecure" nillable="true" type="tns1:authentication3DSecure"/>
 						<element name="mpiResult" nillable="true" type="xsd:string"/>
+						<element name="privateDataList" nillable="true" type="tns1:privateDataList"/>
 					</sequence>
 				</complexType>
 			</element>
@@ -1765,7 +1771,7 @@
 					<element minOccurs="0" name="externalWalletType" nillable="true" type="xsd:string"/>
 					<element minOccurs="0" name="externalWalletContractNumber" nillable="true" type="xsd:string"/>
 					<element minOccurs="0" name="partnerAdditionalData" nillable="true" type="xsd:string"/>
-					<element name="avs" nillable="true" type="tns1:avs"/>
+					<element minOccurs="0" name="avs" nillable="true" type="tns1:avs"/>
 				</sequence>
 			</complexType>
 			<complexType name="scoring">
@@ -1812,7 +1818,7 @@
 					<element name="contractNumber" nillable="false" type="xsd:string"/>
 					<element minOccurs="0" name="differedActionDate" nillable="true" type="xsd:string"/>
 					<element minOccurs="0" name="method" nillable="true" type="xsd:string"/>
-					<element name="softDescriptor" nillable="true" type="xsd:string"/>
+					<element minOccurs="0" name="softDescriptor" nillable="true" type="xsd:string"/>
 					<element minOccurs="0" name="cardBrand" nillable="true" type="string"/>
 					<element minOccurs="0" name="registrationToken" nillable="true" type="xsd:string"/>
 					<element minOccurs="0" name="cumulatedAmount" nillable="true" type="xsd:string"/>
@@ -2104,6 +2110,7 @@
 					<element name="endDate" nillable="true" type="xsd:string"/>
 					<element name="newAmount" nillable="true" type="xsd:string"/>
 					<element name="amountModificationDate" nillable="true" type="xsd:string"/>
+					<element name="billingRank" nillable="true" type="xsd:string"/>
 				</sequence>
 			</complexType>
 			<complexType name="recurringForUpdate">
@@ -2835,6 +2842,7 @@
                     <element name="sdk" nillable="true" type="tns1:sdk"/>
                     <element name="threeDSMethodNotificationURL" nillable="true" type="xsd:string"/>
                     <element name="threeDSMethodResult" nillable="true" type="xsd:string"/>
+                    <element name="challengeWindowSize" nillable="true" type="xsd:string"/>
                 </sequence>
             </complexType>
             <complexType name="browser">
