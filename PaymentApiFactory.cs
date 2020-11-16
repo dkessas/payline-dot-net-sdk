@@ -26,7 +26,7 @@ namespace SDKPaylineDotNet
             {
                 return true;
             };
-            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Ssl3 | System.Net.SecurityProtocolType.Tls | (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
         }
 
         /// <summary>
